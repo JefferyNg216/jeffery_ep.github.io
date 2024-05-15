@@ -1,0 +1,285 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Jeffery's e-Portfolio - Machine Learning</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="../index.html" class="logo">
+									<span class="symbol"><img src="../images/logo.svg" alt="" /></span><span class="title">Jeffery's e-Portfolio</span>
+								</a>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>MSc of Data Science</h2>
+						<ul>
+							<li><a href="../index.html">About Me</a></li>
+							<li><a href="../tdp.html">The Data Professional</a></li>
+							<li><a href="../na.html">Numerical Analysis</a></li>
+							<li><a href="../dbd.html">Deciphering Big Data</a></li>
+							<li><a href="../vd.html">Visualising Data</a></li>
+							<li><a href="../ml.html">Machine Learning</a></li>
+							<li><a href="../rmpp.html">Research Methods and Professional Practice</a></li>
+							<!-- <li><a href="elements.html">Elements</a></li> -->
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<h2 style="margin-bottom: 10px;"><b>Indexing and Slicing Columns & Rows</b></h2>
+							<p>
+							DOT and Bracket method<br>
+							The DOT method is good to find specific elements. The bracket method is intuitive and easy to follow. In this method, you can access the data by the generic name/header of the column.<br>
+							<br>
+							import numpy as np<br>
+							import pandas as pd<br>
+							matrix_data = np.random.randint(1,100,100).reshape(25,4)<br>
+							column_headings = ['W','X','Y','Z']<br>
+							df = pd.DataFrame(data=matrix_data,columns=column_headings)<br>
+							<br>
+							print("\nThe 'X' column\n",'-'*25, sep='')<br>
+							<b>''Result =</b><br>
+							<b>The 'X' column</b><br>
+							<b>-------------------------</b><br>
+							<b>'''</b><br>
+							<br>
+							print(df['X'])<br>
+							<b>'''Result =</b><br>
+							<b>0 67</b><br>
+							<b>1 16</b><br>
+							<b>2 34</b><br>
+							<b>3 53</b><br>
+							<b>4 18</b><br>
+							<b>5 99</b><br>
+							<b>6 91</b><br>
+							<b>7 77</b><br>
+							<b>8 45</b><br>
+							<b>9 19</b><br>
+							<b>10 84</b><br>
+							<b>11 41</b><br>
+							<b>12 24</b><br>
+							<b>13 45</b><br>
+							<b>14 5</b><br>
+							<b>15 86</b><br>
+							<b>16 25</b><br>
+							<b>17 63</b><br>
+							<b>18 71</b><br>
+							<b>19 48</b><br>
+							<b>20 78</b><br>
+							<b>21 14</b><br>
+							<b>22 17</b><br>
+							<b>23 69</b><br>
+							<b>24 21</b><br>
+							<b>Name: X, dtype: int64</b><br>
+							<b>'''</b><br>
+							<br>
+							print("\nType of the column: ", type(df['X']), sep='')<br>
+							<b>'''Result = Type of the column: &lt;class 'pandas.core.series.Series'&gt;'''</b><br>
+							<br>
+							print("\nThe 'X' and 'Z' columns indexed by passing a list\n",'-'*55, sep='')<br>
+							<b>'''Result =</b><br>
+							<b>The 'X' and 'Z' columns indexed by passing a list</b><br>
+							<b>-------------------------------------------------------</b><br>
+							<b>'''</b><br>
+							<br>
+							print(df[['X','Z']])<br>
+							<b>'''Result =</b><br>
+							<b> X Z</b><br>
+							<b>0 67 93</b><br>
+							<b>1 16 58</b><br>
+							<b>2 34 67</b><br>
+							<b>3 53 14</b><br>
+							<b>4 18 96</b><br>
+							<b>5 99 69</b><br>
+							<b>6 91 85</b><br>
+							<b>7 77 77</b><br>
+							<b>8 45 79</b><br>
+							<b>9 19 63</b><br>
+							<b>10 84 76</b><br>
+							<b>11 41 92</b><br>
+							<b>12 24 66</b><br>
+							<b>13 45 79</b><br>
+							<b>14 5 25</b><br>
+							<b>15 86 48</b><br>
+							<b>16 25 84</b><br>
+							<b>17 63 27</b><br>
+							<b>18 71 22</b><br>
+							<b>19 48 24</b><br>
+							<b>20 78 66</b><br>
+							<b>21 14 78</b><br>
+							<b>22 17 60</b><br>
+							<b>23 69 78</b><br>
+							<b>24 21 51</b><br>
+							<b>'''</b><br>
+							<br>
+							print("\nType of the pair of columns: ", type(df[['X','Z']]), sep='')<br>
+							<b>''Result = Type of the pair of columns: &lt;class 'pandas.core.frame.DataFrame'&gt;'''</b><br>
+							
+							<p>
+							Indexing and slicing rows in a DataFrame can also be done using following methods: Label-based 'loc' method / Index based 'iloc' method<br>
+							<br>
+							import numpy as np<br>
+							import pandas as pd<br>
+							<br>
+							matrix_data = np.random.randint(1,10,size=20).reshape(5,4)<br>
+							row_labels = ['A','B','C','D','E']<br>
+							column_headings = ['W','X','Y','Z']<br>
+							df = pd.DataFrame(data=matrix_data, index=row_labels,columns=column_headings)<br>
+							<br>
+							#1. Create a new column using the following snippet:<br>
+							print("\nA column is created by assigning it in relation\n",'-'*75, sep='')<br>
+							<b>'''Result =</b><br>
+							<b>A column is created by assigning it in relation</b><br>
+							<b>---------------------------------------------------------------------------</b><br>
+							<b>'''</b><br>
+							df['New'] = df['X']+df['Z']<br>
+							df['New (Sum of X and Z)'] = df['X']+df['Z']<br>
+							<br>
+							print(df)<br>
+							<b>'''Result =</b><br>
+							<b> W X Y Z New New (Sum of X and Z)</b><br>
+							<b>A 6 6 2 2 8 8</b><br>
+							<b>B 9 3 8 6 9 9</b><br>
+							<b>C 2 4 9 7 11 11</b><br>
+							<b>D 3 1 2 3 4 4</b><br>
+							<b>E 3 6 2 9 15 15</b><br>
+							<b>'''</b><br>
+							<br>
+							#2. Drop a column using the df.drop method:<br>
+							print("\nA column is dropped by using df.drop() method\n",'-'*55, sep='')<br>
+							<b>'''Result =</b><br>
+							<b>A column is dropped by using df.drop() method</b><br>
+							<b>-------------------------------------------------------</b><br>
+							<b>'''</b><br>
+							<br>
+							df = df.drop('New', axis=1) # Notice the axis=1 option, axis = 0 is #default, so one has to change it to 1<br>
+							<br>
+							print(df)<br>
+							<b>'''Result =</b><br>
+							<b> W X Y Z New (Sum of X and Z)</b><br>
+							<b>A 6 6 2 2 8</b><br>
+							<b>B 9 3 8 6 9</b><br>
+							<b>C 2 4 9 7 11</b><br>
+							<b>D 3 1 2 3 4</b><br>
+							<b>E 3 6 2 9 15</b><br>
+							<b>''</b><br>
+							<br>
+							#3. Drop a specific row using the df.drop method:<br>
+							df1=df.drop('A')<br>
+							print("\nA row is dropped by using df.drop method and axis=0\n",'-'*65, sep='')<br>
+							<b>'''Result =</b><br>
+							<b>A row is dropped by using df.drop method and axis=0</b><br>
+							<b>-----------------------------------------------------------------</b><br>
+							<b>'''</b><br>
+							<br>
+							print(df1)<br>
+							<b>'''Result =</b><br>
+							<b> W X Y Z New (Sum of X and Z)</b><br>
+							<b>B 9 3 8 6 9</b><br>
+							<b>C 2 4 9 7 11</b><br>
+							<b>D 3 1 2 3 4</b><br>
+							<b>E 3 6 2 9 15</b><br>
+							<b>'''</b><br>
+							<br>
+							#4. Change the original DataFrame by setting the inplace argument to True:<br>
+							print("\nAn in-place change can be done by making inplace=True in the drop method\n",'-'*75, sep='')<br>
+							<b>'''Result =</b><br>
+							<b>An in-place change can be done by making inplace=True in the drop method</b><br>
+							<b>---------------------------------------------------------------------------</b><br>
+							<b>''</b><br>
+							<br>
+							df.drop('New (Sum of X and Z)', axis=1, inplace=True)<br>
+							<br>
+							print(df)<br>
+							<b>''Result =</b><br>
+							<b> W X Y Z</b><br>
+							<b>A 6 6 2 2</b><br>
+							<b>B 9 3 8 6</b><br>
+							<b>C 2 4 9 7</b><br>
+							<b>D 3 1 2 3</b><br>
+							<b>E 3 6 2 9</b><br>
+							<b>''</b><br>
+							</p>
+							<!-- span class="image main"><img src="../images/pic13.jpg" alt="" /></span>
+						</div>
+					</div>
+
+				<!-- Footer -->
+					<!-- <footer id="footer">
+						<div class="inner">
+							<section>
+								<h2>Get in touch</h2>
+								<form method="post" action="#">
+									<div class="fields">
+										<div class="field half">
+											<input type="text" name="name" id="name" placeholder="Name" />
+										</div>
+										<div class="field half">
+											<input type="email" name="e mail" id="email" placeholder="Email" />
+										</div>
+										<div class="field">
+											<textarea name="message" id="message" placeholder="Message"></textarea>
+										</div>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Send" class="primary" /></li>
+									</ul>
+								</form>
+							</section>
+							<section>
+								<h2>Follow</h2>
+								<ul class="icons">
+									<li><a href="#" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-dribbble"><span class="label">Dribbble</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-500px"><span class="label">500px</span></a></li>
+									<li><a href="#" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
+									<li><a href="#" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+								</ul>
+							</section>
+							<ul class="copyright">
+								<li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</footer> -->
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+
+	</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Jeffery's e-Portfolio - Machine Learning</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="../index.html" class="logo">
+									<span class="symbol"><img src="../images/logo.svg" alt="" /></span><span class="title">Jeffery's e-Portfolio</span>
+								</a>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>MSc of Data Science</h2>
+						<ul>
+							<li><a href="../index.html">About Me</a></li>
+							<li><a href="../tdp.html">The Data Professional</a></li>
+							<li><a href="../na.html">Numerical Analysis</a></li>
+							<li><a href="../dbd.html">Deciphering Big Data</a></li>
+							<li><a href="../vd.html">Visualising Data</a></li>
+							<li><a href="../ml.html">Machine Learning</a></li>
+							<li><a href="../rmpp.html">Research Methods and Professional Practice</a></li>
+							<!-- <li><a href="elements.html">Elements</a></li> -->
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<h2 style="margin-bottom: 10px;"><b>Setting and Resetting the Index</b></h2>
+							<p>
+							import numpy as np<br>
+							import pandas as pd<br>
+							<br>
+							matrix_data = np.matrix('22,66,140;42,70,148;30,62,125;35,68,160;25,62,152')<br>
+							row_labels = ['A','B','C','D','E']<br>
+							column_headings = ['Age', 'Height', 'Weight']<br>
+							<br>
+							df1 = pd.DataFrame(data=matrix_data,index=row_labels,columns=column_headings)<br>
+							print("\nThe DataFrame\n",'-'*25, sep='')<br>
+							print(df1)<br>
+							<b>'''Result =</b><br>
+							<b>The DataFrame</b><br>
+							<b>-------------------------</b><br>
+							<b> Age Height Weight</b><br>
+							<b>A 22 66 140</b><br>
+							<b>B 42 70 148</b><br>
+							<b>C 30 62 125</b><br>
+							<b>D 35 68 160</b><br>
+							<b>E 25 62 152</b><br>
+							<b>'''</b><br>
+							<br>
+							print("\nAfter resetting index\n",'-'*35, sep='')<br>
+							print(df1.reset_index())<br>
+							<b>'''Result =</b><br>
+							<b>After resetting index</b><br>
+							<b>-----------------------------------</b><br>
+							<b> index Age Height Weight</b><br>
+							<b>0 A 22 66 140</b><br>
+							<b>1 B 42 70 148</b><br>
+							<b>2 C 30 62 125</b><br>
+							<b>3 D 35 68 160</b><br>
+							<b>4 E 25 62 152</b><br>
+							<b>'''</b><br>
+							<br>
+							print("\nAdding a new column 'Profession'\n",'-'*45, sep='')<br>
+							df1['Profession'] = "Student Teacher Engineer Doctor Nurse".split()<br>
+							print(df1)<br>
+							<b>'''Result =</b><br>
+							<b>Adding a new column 'Profession'</b><br>
+							<b>---------------------------------------------</b><br>
+							<b> Age Height Weight Profession</b><br>
+							<b>A 22 66 140 Student</b><br>
+							<b>B 42 70 148 Teacher</b><br>
+							<b>C 30 62 125 Engineer</b><br>
+							<b>D 35 68 160 Doctor</b><br>
+							<b>E 25 62 152 Nurse</b><br>
+							<b>'''</b><br>
+							<br>
+							print("\nSetting 'Profession' column as index\n",'-'*45, sep='')<br>
+							print (df1.set_index('Profession'))<br>
+							<b>'''Result =</b><br>
+							<b>Setting 'Profession' column as index</b><br>
+							<b>---------------------------------------------</b><br>
+							<b> Age Height Weight</b><br>
+							<b>Profession</b><br>
+							<b>Student 22 66 140</b><br>
+							<b>Teacher 42 70 148</b><br>
+							<b>Engineer 30 62 125</b><br>
+							<b>Doctor 35 68 160</b><br>
+							<b>Nurse 25 62 152</b><br>
+							<b>'''</b><br>
+							</p>
+							<!-- span class="image main"><img src="../dbd_image/pic1.jpg" alt="" style="width: 600px; height: auto;" /></span>
+						</div>
+					</div>
+
+				<!-- Footer -->
+					<!-- <footer id="footer">
+						<div class="inner">
+							<section>
+								<h2>Get in touch</h2>
+								<form method="post" action="#">
+									<div class="fields">
+										<div class="field half">
+											<input type="text" name="name" id="name" placeholder="Name" />
+										</div>
+										<div class="field half">
+											<input type="email" name="e mail" id="email" placeholder="Email" />
+										</div>
+										<div class="field">
+											<textarea name="message" id="message" placeholder="Message"></textarea>
+										</div>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Send" class="primary" /></li>
+									</ul>
+								</form>
+							</section>
+							<section>
+								<h2>Follow</h2>
+								<ul class="icons">
+									<li><a href="#" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-dribbble"><span class="label">Dribbble</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-500px"><span class="label">500px</span></a></li>
+									<li><a href="#" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
+									<li><a href="#" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+								</ul>
+							</section>
+							<ul class="copyright">
+								<li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</footer> -->
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+
+	</body>
+</html>

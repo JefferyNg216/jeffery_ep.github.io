@@ -1,0 +1,193 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Jeffery's e-Portfolio - Machine Learning</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="../index.html" class="logo">
+									<span class="symbol"><img src="../images/logo.svg" alt="" /></span><span class="title">Jeffery's e-Portfolio</span>
+								</a>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>MSc of Data Science</h2>
+						<ul>
+							<li><a href="../index.html">About Me</a></li>
+							<li><a href="../tdp.html">The Data Professional</a></li>
+							<li><a href="../na.html">Numerical Analysis</a></li>
+							<li><a href="../dbd.html">Deciphering Big Data</a></li>
+							<li><a href="../vd.html">Visualising Data</a></li>
+							<li><a href="../ml.html">Machine Learning</a></li>
+							<li><a href="../rmpp.html">Research Methods and Professional Practice</a></li>
+							<!-- <li><a href="elements.html">Elements</a></li> -->
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<h2 style="margin-bottom: 10px;"><b>The GroupBy Method</b></h2>
+							<p>
+							import numpy as np<br>
+							import pandas as pd<br>
+							<br>
+							df = pd.read_excel("Sample - Superstore.xls")<br>
+							<br>
+							#1. Create a 10-record subset using the following command:<br>
+							df_subset = df.loc[[i for i in range (10)],['Ship Mode','State','Sales']]<br>
+							<br>
+							#2. Create a pandas DataFrame using the groupby object, as follows:<br>
+							byState = df_subset.groupby('State')<br>
+							<br>
+							#3. Calculate the mean sales figure by state by using the following command:<br>
+							print("\nGrouping by 'State' column and listing mean sales\n",'-'*50, sep='')<br>
+							print(byState.mean('Sales'))<br>
+							<b>'''Result =</b><br>
+							<b>Grouping by 'State' column and listing mean sales</b><br>
+							<b>--------------------------------------------------</b><br>
+							<b> Sales</b><br>
+							<b>State</b><br>
+							<b>California 185.219333</b><br>
+							<b>Florida 489.972750</b><br>
+							<b>Kentucky 496.950000</b><br>
+							<b>'''</b><br>
+							<br>
+							#4. Calculate the total sales figure by state by using the following command:<br>
+							print("\nGrouping by 'State' column and listing total sum of sales\n",'-'*50, sep='')<br>
+							print(byState.sum('Sales'))<br>
+							<b>'''Result =</b><br>
+							<b>Grouping by 'State' column and listing total sum of sales</b><br>
+							<b>--------------------------------------------------</b><br>
+							<b> Sales</b><br>
+							<b>State</b><br>
+							<b>California 1111.3160</b><br>
+							<b>Florida 979.9455</b><br>
+							<b>Kentucky 993.9000</b><br>
+							<b>'''</b><br>
+							<br>
+							#5. Subset that DataFrame for a particular state and show the statistics:<br>
+							print(pd.DataFrame(byState.describe().loc['California']))<br>
+							<b>'''Result =</b><br>
+							<b> California</b><br>
+							<b>Sales count 6.000000</b><br>
+							<b> mean 185.219333</b><br>
+							<b> std 355.889307</b><br>
+							<b> min 7.280000</b><br>
+							<b> 25% 15.591000</b><br>
+							<b> 50% 33.682000</b><br>
+							<b> 75% 98.390000</b><br>
+							<b> max 907.152000</b><br>
+							<b>''</b><br>
+							<br>
+							#6. Perform a similar summarization by using the Ship Mode attribute:<br>
+							print(df_subset.groupby('Ship Mode').describe().loc[['Second Class','Standard Class']])<br>
+							<b>'''Result =</b><br>
+							<b> Sales</b><br>
+							<b> count mean std min 25% 50% 75% max</b><br>
+							<b>Ship Mode</b><br>
+							<b>Second Class 3.0 336.173333 364.373037 14.62 138.290 261.96 496.950 731.9400</b><br>
+							<b>Standard Class 7.0 296.663071 435.947552 7.28 20.436 48.86 511.026 957.5775</b><br>
+							<b>'''</b><br>
+							<br>
+							#7. Display the complete summary statistics of sales by every city in each state ¡V all by two lines of code by using the following command:<br>
+							byStateCity=df.groupby(['State','City'])<br>
+							print(byStateCity.describe()['Sales'])<br>
+							<b>'''Result =</b><br>
+							<b> count mean min 25% 50% 75% max std</b><br>
+							<b>State City</b><br>
+							<b>Alabama Auburn 6.0 294.471667 3.760 8.8050 182.030 456.4075 900.080 361.914543</b><br>
+							<b> Decatur 13.0 259.601538 14.940 23.9200 44.950 239.9200 1215.920 385.660903</b><br>
+							<b> Florence 5.0 399.470000 4.980 7.2700 12.480 152.7600 1819.860 796.488863</b><br>
+							<b> Hoover 4.0 131.462500 7.160 13.3925 20.725 138.7950 477.240 230.646923</b><br>
+							<b> Huntsville 10.0 248.437000 3.620 26.8700 81.920 171.8075 1319.960 419.576667</b><br>
+							<b>... ... ... ... ... ... ... ... ...</b><br>
+							<b>Wisconsin Superior 9.0 144.414444 5.560 17.1200 47.400 125.9900 629.100 213.394065</b><br>
+							<b> Waukesha 1.0 54.500000 54.500 54.5000 54.500 54.5000 54.500 NaN</b><br>
+							<b> Wausau 4.0 79.370000 12.390 20.0325 29.605 88.9425 245.880 111.450605</b><br>
+							<b> West Allis 2.0 125.240000 8.520 66.8800 125.240 183.6000 241.960 165.067007</b><br>
+							<b>Wyoming Cheyenne 1.0 1603.136000 1603.136 1603.1360 1603.136 1603.1360 1603.136 NaN</b><br>
+							<b>'''</b><br>
+							</p>
+							<!-- span class="image main"><img src="../dbd_image/pic1.jpg" alt="" style="width: 600px; height: auto;" /></span>
+						</div>
+					</div>
+
+				<!-- Footer -->
+					<!-- <footer id="footer">
+						<div class="inner">
+							<section>
+								<h2>Get in touch</h2>
+								<form method="post" action="#">
+									<div class="fields">
+										<div class="field half">
+											<input type="text" name="name" id="name" placeholder="Name" />
+										</div>
+										<div class="field half">
+											<input type="email" name="e mail" id="email" placeholder="Email" />
+										</div>
+										<div class="field">
+											<textarea name="message" id="message" placeholder="Message"></textarea>
+										</div>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Send" class="primary" /></li>
+									</ul>
+								</form>
+							</section>
+							<section>
+								<h2>Follow</h2>
+								<ul class="icons">
+									<li><a href="#" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-dribbble"><span class="label">Dribbble</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-500px"><span class="label">500px</span></a></li>
+									<li><a href="#" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
+									<li><a href="#" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+								</ul>
+							</section>
+							<ul class="copyright">
+								<li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</footer> -->
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+
+	</body>
+</html>

@@ -1,0 +1,440 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Jeffery's e-Portfolio - Machine Learning</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="../index.html" class="logo">
+									<span class="symbol"><img src="../images/logo.svg" alt="" /></span><span class="title">Jeffery's e-Portfolio</span>
+								</a>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>MSc of Data Science</h2>
+						<ul>
+							<li><a href="../index.html">About Me</a></li>
+							<li><a href="../tdp.html">The Data Professional</a></li>
+							<li><a href="../na.html">Numerical Analysis</a></li>
+							<li><a href="../dbd.html">Deciphering Big Data</a></li>
+							<li><a href="../vd.html">Visualising Data</a></li>
+							<li><a href="../ml.html">Machine Learning</a></li>
+							<li><a href="../rmpp.html">Research Methods and Professional Practice</a></li>
+							<!-- <li><a href="elements.html">Elements</a></li> -->
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<h2 style="margin-bottom: 10px;"><b>Reading an HTML file and Extracting its Contents Using BeautifulSoup</b></h2>
+							<p>
+							from bs4 import BeautifulSoup<br>
+							<br>
+							#2. Please download the following test HTML file and save it on your disk and the use bs4 to read it from the disk:<br>
+							with open("test.html", "r",) as fd:<br>
+							 soup = BeautifulSoup(fd,"lxml")<br>
+							 print(type(soup))<br>
+							<b> # Result = &lt;class 'bs4.BeautifulSoup'&gt;</b><br>
+							<br>
+							#You can pass a file handler directly to the constructor of the BeautifulSoup object and it will read the contents from the file that the handler is attached to. We will see that return-type is an instance of bs4.BeautifulSoup. This class holds all the methods we need to navigate through the DOM tree that the document represents.<br>
+							<br>
+							#3. Print the contents of the file in a nice way by using the prettify method from the class like this:<br>
+							print(soup.prettify())<br>
+							<br>
+							<b>'''Result =</b><br>
+							<b>/Library/Frameworks/Python.framework/Versions/3.11/bin/python3 /Users/jmac/Pyhton_project/Essex/Practice.py</b><br>
+							<b>&lt;class 'bs4.BeautifulSoup'&gt;</b><br>
+							<b>&lt;html&gt;</b><br>
+							<b>&lt;body&gt;</b><br>
+							<b> &lt;h1&gt;</b><br>
+							<b> Lorem ipsum dolor sit amet consectetuer adipiscing</b><br>
+							<b>elit</b><br>
+							<b> &lt;/h1&gt;</b><br>
+							<b> &lt;p&gt;</b><br>
+							<b> Lorem ipsum dolor sit amet, consectetuer adipiscing</b><br>
+							<b>elit. Aenean commodo ligula eget dolor. Aenean massa</b><br>
+							<b> &lt;strong&gt;</b><br>
+							<b> strong</b><br>
+							<b> &lt;/strong&gt;</b><br>
+							<b> . Cum sociis natoque penatibus</b><br>
+							<b>et magnis dis parturient montes, nascetur ridiculus</b><br>
+							<b>mus. Donec quam felis, ultricies nec, pellentesque</b><br>
+							<b>eu, pretium quis, sem. Nulla consequat massa quis</b><br>
+							<b>enim. Donec pede justo, fringilla vel, aliquet nec,</b><br>
+							<b>vulputate eget, arcu. In enim justo, rhoncus ut,</b><br>
+							<b>imperdiet a, venenatis vitae, justo. Nullam dictum</b><br>
+							<b>felis eu pede</b><br>
+							<b> &lt;a class="external ext" href="#"&gt;</b><br>
+							<b> link</b><br>
+							<b> &lt;/a&gt;</b><br>
+							<b> mollis pretium. Integer tincidunt. Cras dapibus.</b><br>
+							<b>Vivamus elementum semper nisi. Aenean vulputate</b><br>
+							<b>eleifend tellus. Aenean leo ligula, porttitor eu,</b><br>
+							<b>consequat vitae, eleifend ac, enim. Aliquam lorem ante,</b><br>
+							<b>dapibus in, viverra quis, feugiat a, tellus. Phasellus</b><br>
+							<b>viverra nulla ut metus varius laoreet. Quisque rutrum.</b><br>
+							<b>Aenean imperdiet. Etiam ultricies nisi vel augue.</b><br>
+							<b>Curabitur ullamcorper ultricies nisi.</b><br>
+							<b> &lt;/p&gt;</b><br>
+							<b> &lt;h1&gt;</b><br>
+							<b> Lorem ipsum dolor sit amet consectetuer adipiscing</b><br>
+							<b>elit</b><br>
+							<b> &lt;/h1&gt;</b><br>
+							<b> &lt;h2&gt;</b><br>
+							<b> Aenean commodo ligula eget dolor aenean massa</b><br>
+							<b> &lt;/h2&gt;</b><br>
+							<b> &lt;p&gt;</b><br>
+							<b> Lorem ipsum dolor sit amet, consectetuer adipiscing</b><br>
+							<b>elit. Aenean commodo ligula eget dolor. Aenean massa.</b><br>
+							<b>Cum sociis natoque penatibus et magnis dis parturient</b><br>
+							<b>montes, nascetur ridiculus mus. Donec quam felis,</b><br>
+							<b>ultricies nec, pellentesque eu, pretium quis, sem.</b><br>
+							<b> &lt;/p&gt;</b><br>
+							<b> &lt;h2&gt;</b><br>
+							<b> Aenean commodo ligula eget dolor aenean massa</b><br>
+							<b> &lt;/h2&gt;</b><br>
+							<b> &lt;p&gt;</b><br>
+							<b> Lorem ipsum dolor sit amet, consectetuer adipiscing</b><br>
+							<b>elit. Aenean commodo ligula eget dolor. Aenean massa.</b><br>
+							<b>Cum sociis natoque penatibus et magnis dis parturient</b><br>
+							<b>montes, nascetur ridiculus mus. Donec quam felis,</b><br>
+							<b>ultricies nec, pellentesque eu, pretium quis, sem.</b><br>
+							<b> &lt;/p&gt;</b><br>
+							<b> &lt;ul&gt;</b><br>
+							<b> &lt;li&gt;</b><br>
+							<b> &lt;a href="https://en.wikipedia.org/wiki/Entropy_(information_theory)"&gt;</b><br>
+							<b> Information Entropy</b><br>
+							<b> &lt;/a&gt;</b><br>
+							<b> &lt;/li&gt;</b><br>
+							<b> &lt;li&gt;</b><br>
+							<b> &lt;a href="http://www.gutenberg.org/browse/scores/top"&gt;</b><br>
+							<b> Top books in Gutenberg</b><br>
+							<b> &lt;/a&gt;</b><br>
+							<b> &lt;/li&gt;</b><br>
+							<b> &lt;li&gt;</b><br>
+							<b> &lt;a href="https://www.imdb.com/chart/top"&gt;</b><br>
+							<b> Top 250 movies in IMDB</b><br>
+							<b> &lt;/a&gt;</b><br>
+							<b> &lt;/li&gt;</b><br>
+							<b> &lt;/ul&gt;</b><br>
+							<b> &lt;p&gt;</b><br>
+							<b> Lorem ipsum dolor sit amet, consectetuer adipiscing</b><br>
+							<b>elit. Aenean commodo ligula eget dolor. Aenean massa.</b><br>
+							<b>Cum sociis natoque penatibus et magnis dis parturient</b><br>
+							<b>montes, nascetur ridiculus mus. Donec quam felis,</b><br>
+							<b>ultricies nec, pellentesque eu, pretium quis, sem.</b><br>
+							<b> &lt;/p&gt;</b><br>
+							<b> &lt;form action="#" method="post"&gt;</b><br>
+							<b> &lt;fieldset&gt;</b><br>
+							<b> &lt;label for="name"&gt;</b><br>
+							<b> Name:</b><br>
+							<b> &lt;/label&gt;</b><br>
+							<b> &lt;input id="name" placeholder="Enter your</b><br>
+							<b>full name" type="text"/&gt;</b><br>
+							<b> &lt;label for="email"&gt;</b><br>
+							<b> Email:</b><br>
+							<b> &lt;/label&gt;</b><br>
+							<b> &lt;input id="email" placeholder="Enter</b><br>
+							<b>your email address" type="email"/&gt;</b><br>
+							<b> &lt;label for="message"&gt;</b><br>
+							<b> Message:</b><br>
+							<b> &lt;/label&gt;</b><br>
+							<b> &lt;textarea id="message" placeholder="What's on your</b><br>
+							<b>mind?"&gt;&lt;/textarea&gt;</b><br>
+							<b> &lt;input type="submit" value="Send message"/&gt;</b><br>
+							<b> &lt;/fieldset&gt;</b><br>
+							<b> &lt;/form&gt;</b><br>
+							<b> &lt;p&gt;</b><br>
+							<b> Lorem ipsum dolor sit amet, consectetuer adipiscing</b><br>
+							<b>elit. Aenean commodo ligula eget dolor. Aenean massa.</b><br>
+							<b>Cum sociis natoque penatibus et magnis dis parturient</b><br>
+							<b>montes, nascetur ridiculus mus. Donec quam felis,</b><br>
+							<b>ultricies nec, pellentesque eu, pretium quis, sem.</b><br>
+							<b> &lt;/p&gt;</b><br>
+							<b> &lt;table class="data"&gt;</b><br>
+							<b> &lt;tr&gt;</b><br>
+							<b> &lt;th&gt;</b><br>
+							<b> Entry Header 1</b><br>
+							<b> &lt;/th&gt;</b><br>
+							<b> &lt;th&gt;</b><br>
+							<b> Entry Header 2</b><br>
+							<b> &lt;/th&gt;</b><br>
+							<b> &lt;th&gt;</b><br>
+							<b> Entry Header 3</b><br>
+							<b> &lt;/th&gt;</b><br>
+							<b> &lt;th&gt;</b><br>
+							<b> Entry Header 4</b><br>
+							<b> &lt;/th&gt;</b><br>
+							<b> &lt;/tr&gt;</b><br>
+							<b> &lt;tr&gt;</b><br>
+							<b> &lt;td&gt;</b><br>
+							<b> Entry First Line 1</b><br>
+							<b> &lt;/td&gt;</b><br>
+							<b> &lt;td&gt;</b><br>
+							<b> Entry First Line 2</b><br>
+							<b> &lt;/td&gt;</b><br>
+							<b> &lt;td&gt;</b><br>
+							<b> Entry First Line 3</b><br>
+							<b> &lt;/td&gt;</b><br>
+							<b> &lt;td&gt;</b><br>
+							<b> Entry First Line 4</b><br>
+							<b> &lt;/td&gt;</b><br>
+							<b> &lt;/tr&gt;</b><br>
+							<b> &lt;tr&gt;</b><br>
+							<b> &lt;td&gt;</b><br>
+							<b> Entry Line 1</b><br>
+							<b> &lt;/td&gt;</b><br>
+							<b> &lt;td&gt;</b><br>
+							<b> Entry Line 2</b><br>
+							<b> &lt;/td&gt;</b><br>
+							<b> &lt;td&gt;</b><br>
+							<b> Entry Line 3</b><br>
+							<b> &lt;/td&gt;</b><br>
+							<b> &lt;td&gt;</b><br>
+							<b> Entry Line 4</b><br>
+							<b> &lt;/td&gt;</b><br>
+							<b> &lt;/tr&gt;</b><br>
+							<b> &lt;tr&gt;</b><br>
+							<b> &lt;td&gt;</b><br>
+							<b> Entry Last Line 1</b><br>
+							<b> &lt;/td&gt;</b><br>
+							<b> &lt;td&gt;</b><br>
+							<b> Entry Last Line 2</b><br>
+							<b> &lt;/td&gt;</b><br>
+							<b> &lt;td&gt;</b><br>
+							<b> Entry Last Line 3</b><br>
+							<b> &lt;/td&gt;</b><br>
+							<b> &lt;td&gt;</b><br>
+							<b> Entry Last Line 4</b><br>
+							<b> &lt;/td&gt;</b><br>
+							<b> &lt;/tr&gt;</b><br>
+							<b> &lt;/table&gt;</b><br>
+							<b> &lt;p&gt;</b><br>
+							<b> Lorem ipsum dolor sit amet, consectetuer adipiscing</b><br>
+							<b>elit. Aenean commodo ligula eget dolor. Aenean massa.</b><br>
+							<b>Cum sociis natoque penatibus et magnis dis parturient</b><br>
+							<b>montes, nascetur ridiculus mus. Donec quam felis,</b><br>
+							<b>ultricies nec, pellentesque eu, pretium quis, sem.</b><br>
+							<b> &lt;/p&gt;</b><br>
+							<b>&lt;/body&gt;</b><br>
+							<b>&lt;/html&gt;</b><br>
+							<b>''</b><br>
+							<br>
+							#4. The magic of bs4 is the fact that it gives us this excellent way to dereference tags as member variables of the BeautifulSoup class instance:<br>
+							with open("test.html", "r") as fd:<br>
+							 soup = BeautifulSoup(fd, "lxml")<br>
+							 print(soup.p)<br>
+							<b>''Result =</b><br>
+							<b>&lt;p&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing</b><br>
+							<b>elit. Aenean commodo ligula eget dolor. Aenean massa</b><br>
+							<b>&lt;strong&gt;strong&lt;/strong&gt;. Cum sociis natoque penatibus</b><br>
+							<b>et magnis dis parturient montes, nascetur ridiculus</b><br>
+							<b>mus. Donec quam felis, ultricies nec, pellentesque</b><br>
+							<b>eu, pretium quis, sem. Nulla consequat massa quis</b><br>
+							<b>enim. Donec pede justo, fringilla vel, aliquet nec,</b><br>
+							<b>vulputate eget, arcu. In enim justo, rhoncus ut,</b><br>
+							<b>imperdiet a, venenatis vitae, justo. Nullam dictum</b><br>
+							<b>felis eu pede &lt;a class="external ext" href="#"&gt;link&lt;/a&gt;</b><br>
+							<b>mollis pretium. Integer tincidunt. Cras dapibus.</b><br>
+							<b>Vivamus elementum semper nisi. Aenean vulputate</b><br>
+							<b>eleifend tellus. Aenean leo ligula, porttitor eu,</b><br>
+							<b>consequat vitae, eleifend ac, enim. Aliquam lorem ante,</b><br>
+							<b>dapibus in, viverra quis, feugiat a, tellus. Phasellus</b><br>
+							<b>viverra nulla ut metus varius laoreet. Quisque rutrum.</b><br>
+							<b>Aenean imperdiet. Etiam ultricies nisi vel augue.</b><br>
+							<b>Curabitur ullamcorper ultricies nisi.&lt;/p&gt;</b><br>
+							<b>''</b><br>
+							<br>
+							#5. Use the findall method to extract the content from the tag:<br>
+							with open("test.html", "r") as fd:<br>
+							 soup = BeautifulSoup(fd, "lxml")<br>
+							 all_ps = soup.find_all('p')<br>
+							 print("Total number of &lt;p&gt; --- {}".format(len(all_ps)))<br>
+							<b>#Result = Total number of &lt;p&gt; --- 6</b><br>
+							<br>
+							#This will print 6, which is exactly the number of &lt;p&gt;tags in the document.<br>
+							#We have seen how to access all the tags of the same type. We have also seen how to get the content of the entire HTML document.<br>
+							<br>
+							#6. Now, we will see how to get the contents under a particular HTML tag, as follows:<br>
+							with open("test.html", "r") as fd:<br>
+							 soup = BeautifulSoup(fd,"lxml")<br>
+							 table = soup.table<br>
+							 print(table.contents)<br>
+							<br>
+							<b>''Result =</b><br>
+							<b>['\n', &lt;tr&gt;</b><br>
+							<b>&lt;th&gt;Entry Header 1&lt;/th&gt;</b><br>
+							<b>&lt;th&gt;Entry Header 2&lt;/th&gt;</b><br>
+							<b>&lt;th&gt;Entry Header 3&lt;/th&gt;</b><br>
+							<b>&lt;th&gt;Entry Header 4&lt;/th&gt;</b><br>
+							<b>&lt;/tr&gt;, '\n', &lt;tr&gt;</b><br>
+							<b>&lt;td&gt;Entry First Line 1&lt;/td&gt;</b><br>
+							<b>&lt;td&gt;Entry First Line 2&lt;/td&gt;</b><br>
+							<b>&lt;td&gt;Entry First Line 3&lt;/td&gt;</b><br>
+							<b>&lt;td&gt;Entry First Line 4&lt;/td&gt;</b><br>
+							<b>&lt;/tr&gt;, '\n', &lt;tr&gt;</b><br>
+							<b>&lt;td&gt;Entry Line 1&lt;/td&gt;</b><br>
+							<b>&lt;td&gt;Entry Line 2&lt;/td&gt;</b><br>
+							<b>&lt;td&gt;Entry Line 3&lt;/td&gt;</b><br>
+							<b>&lt;td&gt;Entry Line 4&lt;/td&gt;</b><br>
+							<b>&lt;/tr&gt;, '\n', &lt;tr&gt;</b><br>
+							<b>&lt;td&gt;Entry Last Line 1&lt;/td&gt;</b><br>
+							<b>&lt;td&gt;Entry Last Line 2&lt;/td&gt;</b><br>
+							<b>&lt;td&gt;Entry Last Line 3&lt;/td&gt;</b><br>
+							<b>&lt;td&gt;Entry Last Line 4&lt;/td&gt;</b><br>
+							<b>&lt;/tr&gt;, '\n']</b><br>
+							<b>''</b><br>
+							<br>
+							#Here, we are getting the (first) table from the document and then using the same "." notation, to get the contents under that tag.<br>
+							#We saw in the previous exercise that we can access the entire content under a particular tag. However, HTML is represented as a tree and we are able to traverse the children of a particular node. There are a few ways to do this.<br>
+							<br>
+							#7. The first way is by using the children generator from any bs4 instance, as follows:<br>
+							with open("test.html", "r") as fd:<br>
+							 soup = BeautifulSoup(fd,'lxml')<br>
+							 table = soup.table<br>
+							 for child in table.children:<br>
+							 print(child)<br>
+							 print("*****")<br>
+							<br>
+							<b>''Result =</b><br>
+							<b>*****</b><br>
+							<b>&lt;tr&gt;</b><br>
+							<b>&lt;th&gt;Entry Header 1&lt;/th&gt;</b><br>
+							<b>&lt;th&gt;Entry Header 2&lt;/th&gt;</b><br>
+							<b>&lt;th&gt;Entry Header 3&lt;/th&gt;</b><br>
+							<b>&lt;th&gt;Entry Header 4&lt;/th&gt;</b><br>
+							<b>&lt;/tr&gt;</b><br>
+							<b>*****</b><br>
+							<b></b><br>
+							<b></b><br>
+							<b>*****</b><br>
+							<b>&lt;tr&gt;</b><br>
+							<b>&lt;td&gt;Entry First Line 1&lt;/td&gt;</b><br>
+							<b>&lt;td&gt;Entry First Line 2&lt;/td&gt;</b><br>
+							<b>&lt;td&gt;Entry First Line 3&lt;/td&gt;</b><br>
+							<b>&lt;td&gt;Entry First Line 4&lt;/td&gt;</b><br>
+							<b>&lt;/tr&gt;</b><br>
+							<b>*****</b><br>
+							<b></b><br>
+							<b></b><br>
+							<b>*****</b><br>
+							<b>&lt;tr&gt;</b><br>
+							<b>&lt;td&gt;Entry Line 1&lt;/td&gt;</b><br>
+							<b>&lt;td&gt;Entry Line 2&lt;/td&gt;</b><br>
+							<b>&lt;td&gt;Entry Line 3&lt;/td&gt;</b><br>
+							<b>&lt;td&gt;Entry Line 4&lt;/td&gt;</b><br>
+							<b>&lt;/tr&gt;</b><br>
+							<b>*****</b><br>
+							<b></b><br>
+							<b></b><br>
+							<b>*****</b><br>
+							<b>&lt;tr&gt;</b><br>
+							<b>&lt;td&gt;Entry Last Line 1&lt;/td&gt;</b><br>
+							<b>&lt;td&gt;Entry Last Line 2&lt;/td&gt;</b><br>
+							<b>&lt;td&gt;Entry Last Line 3&lt;/td&gt;</b><br>
+							<b>&lt;td&gt;Entry Last Line 4&lt;/td&gt;</b><br>
+							<b>&lt;/tr&gt;</b><br>
+							<b>*****</b><br>
+							<b></b><br>
+							<b></b><br>
+							<b>*****</b><br>
+							<b>''</b><br>
+							<br>
+							#It seems that the loop has only been executed twice! Well, the problem with the "children" generator is that it only takes into account the immediate children of the tag. We have &lt;tbody&gt; under the &lt;table&gt; and our whole table structure is wrapped in it. That's why it was considered a single child of the &lt;table&gt; tag.<br>
+							#We looked into how to browse the immediate children of a tag. We will see how we can browse all the possible children of a tag and not only the immediate one.<br>
+							<br>
+							#8. To do that, we use the descendants generator from the bs4 instance, as follows:<br>
+							with open("test.html", "r") as fd:<br>
+							 soup = BeautifulSoup(fd,'lxml')<br>
+							 table = soup.table<br>
+							 children = table.children<br>
+							 des = table.descendants<br>
+							 print(len(list(children)), len(list(des)))<br>
+							<br>
+							<b>#Result = 9 61</b><br>
+							<br>
+							#The comparison print at the end of the code block will show us the difference between children and descendants. The length of the list we got from children is only 9, whereas the length of the list we got from descendants is 61.<br>
+							</p>
+							<!-- span class="image main" style="margin-bottom: 10px;"><img src="../dbd_image/pic1.jpg" alt="" style="width: 600px; height: auto;" /></span>
+						</div>
+					</div>
+
+				<!-- Footer -->
+					<!-- <footer id="footer">
+						<div class="inner">
+							<section>
+								<h2>Get in touch</h2>
+								<form method="post" action="#">
+									<div class="fields">
+										<div class="field half">
+											<input type="text" name="name" id="name" placeholder="Name" />
+										</div>
+										<div class="field half">
+											<input type="email" name="e mail" id="email" placeholder="Email" />
+										</div>
+										<div class="field">
+											<textarea name="message" id="message" placeholder="Message"></textarea>
+										</div>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Send" class="primary" /></li>
+									</ul>
+								</form>
+							</section>
+							<section>
+								<h2>Follow</h2>
+								<ul class="icons">
+									<li><a href="#" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-dribbble"><span class="label">Dribbble</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-500px"><span class="label">500px</span></a></li>
+									<li><a href="#" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
+									<li><a href="#" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+								</ul>
+							</section>
+							<ul class="copyright">
+								<li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</footer> -->
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+
+	</body>
+</html>

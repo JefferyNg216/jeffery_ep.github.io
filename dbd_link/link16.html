@@ -1,0 +1,162 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Jeffery's e-Portfolio - Machine Learning</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="../index.html" class="logo">
+									<span class="symbol"><img src="../images/logo.svg" alt="" /></span><span class="title">Jeffery's e-Portfolio</span>
+								</a>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>MSc of Data Science</h2>
+						<ul>
+							<li><a href="../index.html">About Me</a></li>
+							<li><a href="../tdp.html">The Data Professional</a></li>
+							<li><a href="../na.html">Numerical Analysis</a></li>
+							<li><a href="../dbd.html">Deciphering Big Data</a></li>
+							<li><a href="../vd.html">Visualising Data</a></li>
+							<li><a href="../ml.html">Machine Learning</a></li>
+							<li><a href="../rmpp.html">Research Methods and Professional Practice</a></li>
+							<!-- <li><a href="elements.html">Elements</a></li> -->
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<h2 style="margin-bottom: 10px;"><b>Viewing a DataFrame Partially</b></h2>
+							<p>
+							import numpy as np<br>
+							import pandas as pd<br>
+							#1. Execute the following code to create a DataFrame with 25 rows and fill it with random numbers:<br>
+							# 25 rows and 4 columns<br>
+							matrix_data = np.random.randint(1,100,100).reshape(25,4)<br>
+							column_headings = ['W','X','Y','Z']<br>
+							df = pd.DataFrame(data=matrix_data,columns=column_headings)<br>
+							<br>
+							#2. Run the following code to view only the first five rows of the DataFrame:<br>
+							print(df.head())<br>
+							<b>'''Result =</b><br>
+							<b> W X Y Z</b><br>
+							<b>0 93 38 29 8</b><br>
+							<b>1 51 1 89 72</b><br>
+							<b>2 89 16 29 4</b><br>
+							<b>3 38 39 84 81</b><br>
+							<b>4 42 79 73 82</b><br>
+							<b>'''</b><br>
+							<br>
+							#3. Print the first eight rows by using the following command:<br>
+							print(df.head(8))<br>
+							<b>'''Result =</b><br>
+							<b>W X Y Z</b><br>
+							<b>0 93 38 29 8</b><br>
+							<b>1 51 1 89 72</b><br>
+							<b>2 89 16 29 4</b><br>
+							<b>3 38 39 84 81</b><br>
+							<b>4 42 79 73 82</b><br>
+							<b>5 1 89 70 71</b><br>
+							<b>6 8 39 46 67</b><br>
+							<b>7 54 34 76 43</b><br>
+							<b>'''</b><br>
+							<br>
+							#4. Print the DataFrame using the tail command, as follows:<br>
+							print(df.tail(10))<br>
+							<b>'''Result =</b><br>
+							<b> W X Y Z</b><br>
+							<b>15 68 60 64 92</b><br>
+							<b>16 61 62 25 5</b><br>
+							<b>17 67 29 84 18</b><br>
+							<b>18 73 87 84 33</b><br>
+							<b>19 61 65 98 65</b><br>
+							<b>20 5 76 20 99</b><br>
+							<b>21 27 83 84 28</b><br>
+							<b>22 26 20 32 60</b><br>
+							<b>23 46 93 86 40</b><br>
+							<b>24 94 62 8 88</b><br>
+							<b>'''</b><br>
+							</p>
+							<!-- span class="image main"><img src="../images/pic13.jpg" alt="" /></span>
+						</div>
+					</div>
+
+				<!-- Footer -->
+					<!-- <footer id="footer">
+						<div class="inner">
+							<section>
+								<h2>Get in touch</h2>
+								<form method="post" action="#">
+									<div class="fields">
+										<div class="field half">
+											<input type="text" name="name" id="name" placeholder="Name" />
+										</div>
+										<div class="field half">
+											<input type="email" name="e mail" id="email" placeholder="Email" />
+										</div>
+										<div class="field">
+											<textarea name="message" id="message" placeholder="Message"></textarea>
+										</div>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Send" class="primary" /></li>
+									</ul>
+								</form>
+							</section>
+							<section>
+								<h2>Follow</h2>
+								<ul class="icons">
+									<li><a href="#" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-dribbble"><span class="label">Dribbble</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-500px"><span class="label">500px</span></a></li>
+									<li><a href="#" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
+									<li><a href="#" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+								</ul>
+							</section>
+							<ul class="copyright">
+								<li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</footer> -->
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+
+	</body>
+</html>

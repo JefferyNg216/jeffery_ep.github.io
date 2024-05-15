@@ -1,0 +1,147 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Jeffery's e-Portfolio - Machine Learning</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="../index.html" class="logo">
+									<span class="symbol"><img src="../images/logo.svg" alt="" /></span><span class="title">Jeffery's e-Portfolio</span>
+								</a>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>MSc of Data Science</h2>
+						<ul>
+							<li><a href="../index.html">About Me</a></li>
+							<li><a href="../tdp.html">The Data Professional</a></li>
+							<li><a href="../na.html">Numerical Analysis</a></li>
+							<li><a href="../dbd.html">Deciphering Big Data</a></li>
+							<li><a href="../vd.html">Visualising Data</a></li>
+							<li><a href="../ml.html">Machine Learning</a></li>
+							<li><a href="../rmpp.html">Research Methods and Professional Practice</a></li>
+							<!-- <li><a href="elements.html">Elements</a></li> -->
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<h2 style="margin-bottom: 10px;"><b>Flexibility for User-Defined Functions with the apply Method</b></h2>
+							<p>
+							import pandas as pd<br>
+							<br>
+							df = pd.read_excel("Sample - Superstore.xls")<br>
+							<br>
+							#1. Create a user-defined function, as follows:<br>
+							def categorize_sales(price):<br>
+							 if price &lt; 50:<br>
+							 return "Low"<br>
+							 elif price &lt; 200:<br>
+							 return "Medium"<br>
+							 else:<br>
+							 return "High"<br>
+							<br>
+							#2. Sample 100 records randomly from the database:<br>
+							df_sample=df[['Customer Name','State','Sales']].sample(n=100)<br>
+							print(df_sample.head(10))<br>
+							<span class="image main" style="margin-bottom: 10px;"><img src="../dbd_image/link42_result1.jpg" alt="" style="width: 600px; height: auto;" /></span>
+							<br>
+							#3. Use the apply method to apply the categorization function onto the Sales column:<br>
+							#Note We need to create a new column to store the category string values that are returned by the function.<br>
+							df_sample['Sales Price Category']=df_sample['Sales'].apply(categorize_sales)<br>
+							print(df_sample.head(10))<br>
+							<span class="image main" style="margin-bottom: 10px;"><img src="../dbd_image/link42_result2.jpg" alt="" style="width: 600px; height: auto;" /></span>
+							<br>
+							#4. The apply method also works with the built-in native Python functions. For practice, let's create another column for storing the length of the name of the customer. We can do that using the familiar len function:<br>
+							df_sample['Customer Name Length']=df_sample['Customer Name'].apply(len)<br>
+							print(df_sample.head(10))<br>
+							<span class="image main" style="margin-bottom: 10px;"><img src="../dbd_image/link42_result3.jpg" alt="" style="width: 600px; height: auto;" /></span>
+							<br>
+							#5. Instead of writing out a separate function, we can even insert lambda expressions directly into the apply method for short functions. For example, let's say we are promoting our product and want to show the discounted sales price if the original price is &gt; $200. We can do this using a lambda function and the apply method:<br>
+							df_sample['Discounted Price']=df_sample['Sales'].apply(lambda x:0.85*x if x&gt;200 else x)<br>
+							print(df_sample.head(10))<br>
+							<span class="image main" style="margin-bottom: 10px;"><img src="../dbd_image/link42_result4.jpg" alt="" style="width: 600px; height: auto;" /></span>
+							</p>
+							<!-- span class="image main" style="margin-bottom: 10px;"><img src="../dbd_image/pic1.jpg" alt="" style="width: 600px; height: auto;" /></span>
+						</div>
+					</div>
+
+				<!-- Footer -->
+					<!-- <footer id="footer">
+						<div class="inner">
+							<section>
+								<h2>Get in touch</h2>
+								<form method="post" action="#">
+									<div class="fields">
+										<div class="field half">
+											<input type="text" name="name" id="name" placeholder="Name" />
+										</div>
+										<div class="field half">
+											<input type="email" name="e mail" id="email" placeholder="Email" />
+										</div>
+										<div class="field">
+											<textarea name="message" id="message" placeholder="Message"></textarea>
+										</div>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Send" class="primary" /></li>
+									</ul>
+								</form>
+							</section>
+							<section>
+								<h2>Follow</h2>
+								<ul class="icons">
+									<li><a href="#" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-dribbble"><span class="label">Dribbble</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-500px"><span class="label">500px</span></a></li>
+									<li><a href="#" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
+									<li><a href="#" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+								</ul>
+							</section>
+							<ul class="copyright">
+								<li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</footer> -->
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+
+	</body>
+</html>

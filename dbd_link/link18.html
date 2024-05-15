@@ -1,0 +1,148 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Jeffery's e-Portfolio - Machine Learning</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="../index.html" class="logo">
+									<span class="symbol"><img src="../images/logo.svg" alt="" /></span><span class="title">Jeffery's e-Portfolio</span>
+								</a>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>MSc of Data Science</h2>
+						<ul>
+							<li><a href="../index.html">About Me</a></li>
+							<li><a href="../tdp.html">The Data Professional</a></li>
+							<li><a href="../na.html">Numerical Analysis</a></li>
+							<li><a href="../dbd.html">Deciphering Big Data</a></li>
+							<li><a href="../vd.html">Visualising Data</a></li>
+							<li><a href="../ml.html">Machine Learning</a></li>
+							<li><a href="../rmpp.html">Research Methods and Professional Practice</a></li>
+							<!-- <li><a href="elements.html">Elements</a></li> -->
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<h2 style="margin-bottom: 10px;"><b>Create simple scatter plots of age versus weight	</b></h2>
+							<p>
+							import numpy as np<br>
+							import pandas as pd<br>
+							import matplotlib.pyplot as plt<br>
+							<br>
+							people = ['Ann','Brandon','Chen','David','Emily','Farook', 'Gagan','Hamish','Imran','Joseph','Katherine','Lily']<br>
+							age = [21,12,32,45,37,18,28,52,5,40,48,15]<br>
+							weight = [55,35,77,68,70,60,72,69,18,65,82,48]<br>
+							height = [160,135,170,165,173,168,175,159,105,171,155,158]<br>
+							<br>
+							plt.scatter(age,weight)<br>
+							plt.show()<br>
+							<span class="image main"><img src="../dbd_image/pic1.jpg" alt="" style="width: 600px; height: auto;" /></span>
+							<br>
+							#The code improved plot is as follows:<br>
+							plt.figure(figsize=(8,6))<br>
+							plt.title("Plot of Age vs. Weight (in kgs)",fontsize=20)<br>
+							plt.xlabel("Age (years)",fontsize=16)<br>
+							plt.ylabel("Weight (kgs)",fontsize=16)<br>
+							plt.grid (True)<br>
+							plt.ylim(0,100)<br>
+							plt.xticks([i*5 for i in range(12)],fontsize=15)<br>
+							plt.yticks(fontsize=15)<br>
+							plt.scatter(x=age,y=weight,c='orange',s=150,edgecolors='k')<br>
+							plt.text(x=20,y=85,s="Weights after 18-20 years of age",fontsize=15)<br>
+							plt.vlines(x=20,ymin=0,ymax=80,linestyles='dashed',color='blue',lw=3)<br>
+							plt.legend(['Weight in kgs'],loc=2,fontsize=12)<br>
+							plt.show()<br>
+							<span class="image main"><img src="../dbd_image/pic2.jpg" alt="" style="width: 600px; height: auto;" /></span>
+							<br>
+							<p style="margin-bottom: 10px;">Observe the following:</p>
+							<li>A tuple (8,6) is passed as an argument for the figure size.</li>
+							<li>A list comprehension is used inside Xticks to create a customized list of 5-10-15-...-55.</li>
+							<li>A newline (\n) character is used inside the plt.text() function to break up and distribute the text in two lines.</li>
+							<li>The plt.show() function is used at the very end. The idea is to keep on adding various graphics properties (font, color, axis limits, text, legend, grid, and so on) until you are satisfied and then show the plot with one function. The plot will not be displayed without this last function call.</li>
+							</p>
+							<!-- span class="image main"><img src="../images/pic13.jpg" alt="" /></span>
+						</div>
+					</div>
+
+				<!-- Footer -->
+					<!-- <footer id="footer">
+						<div class="inner">
+							<section>
+								<h2>Get in touch</h2>
+								<form method="post" action="#">
+									<div class="fields">
+										<div class="field half">
+											<input type="text" name="name" id="name" placeholder="Name" />
+										</div>
+										<div class="field half">
+											<input type="email" name="e mail" id="email" placeholder="Email" />
+										</div>
+										<div class="field">
+											<textarea name="message" id="message" placeholder="Message"></textarea>
+										</div>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Send" class="primary" /></li>
+									</ul>
+								</form>
+							</section>
+							<section>
+								<h2>Follow</h2>
+								<ul class="icons">
+									<li><a href="#" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-dribbble"><span class="label">Dribbble</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-500px"><span class="label">500px</span></a></li>
+									<li><a href="#" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
+									<li><a href="#" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+								</ul>
+							</section>
+							<ul class="copyright">
+								<li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</footer> -->
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+
+	</body>
+</html>

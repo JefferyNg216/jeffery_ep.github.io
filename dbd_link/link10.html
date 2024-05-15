@@ -1,0 +1,197 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Jeffery's e-Portfolio - Machine Learning</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="../index.html" class="logo">
+									<span class="symbol"><img src="../images/logo.svg" alt="" /></span><span class="title">Jeffery's e-Portfolio</span>
+								</a>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>MSc of Data Science</h2>
+						<ul>
+							<li><a href="../index.html">About Me</a></li>
+							<li><a href="../tdp.html">The Data Professional</a></li>
+							<li><a href="../na.html">Numerical Analysis</a></li>
+							<li><a href="../dbd.html">Deciphering Big Data</a></li>
+							<li><a href="../vd.html">Visualising Data</a></li>
+							<li><a href="../ml.html">Machine Learning</a></li>
+							<li><a href="../rmpp.html">Research Methods and Professional Practice</a></li>
+							<!-- <li><a href="elements.html">Elements</a></li> -->
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<h2 style="margin-bottom: 10px;"><b>Indexing and Slicing</b></h2>
+							<p>
+							import numpy as np<br>
+							<br>
+							#1. Create an array of 10 elements and examine its various elements by slicing and indexing the array with slightly different syntaxes. Do this by using the following command:<br>
+							array_1 = np.arange(0,11)<br>
+							print("Array:",array_1)<br>
+							<b>'''Result = Array: [ 0 1 2 3 4 5 6 7 8 9 10]'''</b><br>
+							<br>
+							#2. Print the element in the seventh position by using the following command:<br>
+							print("Element at 7th index is:", array_1[7])<br>
+							<b>''Result = Element at 7th index is: 7'''</b><br>
+							<br>
+							#3. Print the elements between the third and sixth positions by using the following command:<br>
+							print("Elements from 3rd to 5th index are:", array_1[3:6])<br>
+							<b>'''Result = Elements from 3rd to 5th index are: [3 4 5]'''</b><br>
+							<br>
+							#4. Print the elements until the fourth position by using the following command:<br>
+							print("Elements up to 4th index are:", array_1[:4])<br>
+							<b>'''Result = Elements up to 4th index are: [0 1 2 3]'''</b><br>
+							<br>
+							#5. Print the elements backwards by using the following command:<br>
+							print("Elements from last backwards are:", array_1[-1::-1])<br>
+							<b>'''Result = Elements from last backwards are: [10 9 8 7 6 5 4 3 2 1 0]'''</b><br>
+							<br>
+							#6. Print the elements using their backward index, skipping three values, by using the following command:<br>
+							print("3 Elements from last backwards are:", array_1[-1:-6:-2])<br>
+							<b>'''Result = 3 Elements from last backwards are: [10 8 6]'''</b><br>
+							<br>
+							#7. Create a new array called array_2 by using the following command:<br>
+							array_2 = np.arange(0,21,2)<br>
+							print("New array:",array_2)<br>
+							<b>''Result = New array: [ 0 2 4 6 8 10 12 14 16 18 20]'''</b><br>
+							<br>
+							#8. Print the second, fourth, and ninth elements of the array:<br>
+							print("Elements at 2nd, 4th, and 9th index are:", array_2[[2,4,9]])<br>
+							<b>''Result = Elements at 2nd, 4th, and 9th index are: [ 4 8 18]'''</b><br>
+							<br>
+							#9. Create a multi-dimensional array by using the following command:<br>
+							matrix_1 = np.random.randint(10,100,15).reshape(3,5)<br>
+							print("Matrix of random 2-digit numbers\n ",matrix_1)<br>
+							<b>''Result =</b><br>
+							<b>Matrix of random 2-digit numbers</b><br>
+							<b> [[74 78 45 92 11]</b><br>
+							<b>[99 56 67 92 69]</b><br>
+							<b>[42 39 18 50 95]]</b><br>
+							<b>'''</b><br>
+							<br>
+							#10. Access the values using double bracket indexing by using the following command:<br>
+							print("\nDouble bracket indexing\n")<br>
+							<b>'''Result = Double bracket indexing'''</b><br>
+							print("Element in row index 1 and column index 2:", matrix_1[1][2])<br>
+							<b>''Result = Element in row index 1 and column index 2: 67'''</b><br>
+							<br>
+							#11. Access the values using single bracket indexing by using the following command:<br>
+							print("\nSingle bracket with comma indexing\n")<br>
+							''Result = Single bracket with comma indexing'''<br>
+							print("Element in row index 1 and column index 2:", matrix_1[1,2])<br>
+							<b>''Result = Element in row index 1 and column index 2: 67'''</b><br>
+							<br>
+							#12. Access the values in a multi-dimensional array using a row or column by using the following command:<br>
+							print("\now or column extract\n")<br>
+							<b>''Result = Row or column extract'''</b><br>
+							print("Entire row at index 2:", matrix_1[2])<br>
+							<b>''Result = Entire row at index 2: [42 39 18 50 95]'''</b><br>
+							print("Entire column at index 3:", matrix_1[:,3])<br>
+							<b>''Result = Entire column at index 3: [92 92 50]'''</b><br>
+							<br>
+							#13. Print the matrix with the specified row and column indices by using the following command:<br>
+							print("\nSubsetting sub-matrices\n")<br>
+							<b>''Result = Subsetting sub-matrices'''</b><br>
+							print("Matrix with row indices 1 and 2 and column indices 3 and 4\n", matrix_1[1:3,3:5])<br>
+							<b>''Result =</b><br>
+							Matrix with row indices 1 and 2 and column indices 3 and 4<br>
+							[[92 69]<br>
+							[50 95]]<br>
+							''<br>
+							<br>
+							#14. Print the matrix with the specified row and column indices by using the following command:<br>
+							print("Matrix with row indices 0 and 1 and column indices 1 and 3\n", matrix_1[0:2,[1,3]])<br>
+							<b>''Result =</b><br>
+							<b>Matrix with row indices 0 and 1 and column indices 1 and 3</b><br>
+							<b>[[78 92]</b><br>
+							<b>[56 92]]</b><br>
+							<b>''</b><br>
+							</p>
+							<!-- span class="image main"><img src="../images/pic13.jpg" alt="" /></span>
+						</div>
+					</div>
+
+				<!-- Footer -->
+					<!-- <footer id="footer">
+						<div class="inner">
+							<section>
+								<h2>Get in touch</h2>
+								<form method="post" action="#">
+									<div class="fields">
+										<div class="field half">
+											<input type="text" name="name" id="name" placeholder="Name" />
+										</div>
+										<div class="field half">
+											<input type="email" name="e mail" id="email" placeholder="Email" />
+										</div>
+										<div class="field">
+											<textarea name="message" id="message" placeholder="Message"></textarea>
+										</div>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Send" class="primary" /></li>
+									</ul>
+								</form>
+							</section>
+							<section>
+								<h2>Follow</h2>
+								<ul class="icons">
+									<li><a href="#" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-dribbble"><span class="label">Dribbble</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-500px"><span class="label">500px</span></a></li>
+									<li><a href="#" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
+									<li><a href="#" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+								</ul>
+							</section>
+							<ul class="copyright">
+								<li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</footer> -->
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+
+	</body>
+</html>

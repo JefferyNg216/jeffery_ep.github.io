@@ -1,0 +1,186 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Jeffery's e-Portfolio - Machine Learning</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="../index.html" class="logo">
+									<span class="symbol"><img src="../images/logo.svg" alt="" /></span><span class="title">Jeffery's e-Portfolio</span>
+								</a>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>MSc of Data Science</h2>
+						<ul>
+							<li><a href="../index.html">About Me</a></li>
+							<li><a href="../tdp.html">The Data Professional</a></li>
+							<li><a href="../na.html">Numerical Analysis</a></li>
+							<li><a href="../dbd.html">Deciphering Big Data</a></li>
+							<li><a href="../vd.html">Visualising Data</a></li>
+							<li><a href="../ml.html">Machine Learning</a></li>
+							<li><a href="../rmpp.html">Research Methods and Professional Practice</a></li>
+							<!-- <li><a href="elements.html">Elements</a></li> -->
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<h2 style="margin-bottom: 10px;"><b>Array Operations (array-array, array-scalar, and universal functions)</b></h2>
+							<p>
+							import numpy as np<br>
+							matrix_1 = np.random.randint(1,10,9).reshape(3,3)<br>
+							matrix_2 = np.random.randint(1,10,9).reshape(3,3)<br>
+							print("\n1st Matrix of random single-digit numbers\n",matrix_1)<br>
+							<b>''Result =</b><br>
+							<b>1st Matrix of random single-digit numbers</b><br>
+							<b>[[6 4 8]</b><br>
+							<b>[7 9 3]</b><br>
+							<b>[9 9 6]]</b><br>
+							<b>'''</b><br>
+							<br>
+							print("\n2nd Matrix of random single-digit numbers\n",matrix_2)<br>
+							<b>''Result =</b><br>
+							<b>2nd Matrix of random single-digit numbers</b><br>
+							<b>[[7 9 2]</b><br>
+							<b>[7 1 7]</b><br>
+							<b>[8 4 8]]</b><br>
+							<b>'''</b><br>
+							<br>
+							print("\nAddition\n", matrix_1+matrix_2)<br>
+							<b>'''Result =</b><br>
+							<b>[[13 13 10]</b><br>
+							<b>[14 10 10]</b><br>
+							<b>[17 13 14]]</b><br>
+							<b>''</b><br>
+							<br>
+							print("\nMultiplication\n", matrix_1*matrix_2)<br>
+							<b>''Result =</b><br>
+							<b>[[42 36 16]</b><br>
+							<b>[49 9 21]</b><br>
+							<b>[72 36 48]]</b><br>
+							<b>''</b><br>
+							<br>
+							print("\nDivision\n", matrix_1/matrix_2)<br>
+							<b>'''Result =</b><br>
+							<b>Division</b><br>
+							<b>[[0.85714286 0.44444444 4. ]</b><br>
+							<b>[1. 9. 0.42857143]</b><br>
+							<b>[1.125 2.25 0.75 ]]</b><br>
+							<b>'''</b><br>
+							<br>
+							print("\nLinear combination: 3*A - 2*B\n", 3*matrix_1-2*matrix_2)<br>
+							<b>'''Result =</b><br>
+							<b>Linear combination: 3*A - 2*B</b><br>
+							<b>[[ 4 -6 20]</b><br>
+							<b>[ 7 25 -5]</b><br>
+							<b>[11 19 2]]</b><br>
+							<b>''</b><br>
+							<br>
+							print("\nAddition of a scalar (100)\n", 100+matrix_1)<br>
+							<b>'''Result =</b><br>
+							<b>Addition of a scalar (100)</b><br>
+							<b>[[106 104 108]</b><br>
+							<b>[107 109 103]</b><br>
+							<b>[109 109 106]]</b><br>
+							<b>''</b><br>
+							<br>
+							print("\nExponentiation, matrix cubed here\n", matrix_1**3)<br>
+							<b>''Result =</b><br>
+							<b>Exponentiation, matrix cubed here</b><br>
+							<b>[[216 64 512]</b><br>
+							<b>[343 729 27]</b><br>
+							<b>[729 729 216]]</b><br>
+							<b>''</b><br>
+							<br>
+							print("\nExponentiation, square root using 'pow' function\n",pow(matrix_1,0.5))<br>
+							<b>''Result =</b><br>
+							<b>Exponentiation, square root using 'pow' function</b><br>
+							<b>[[2.44948974 2. 2.82842712]</b><br>
+							<b>[2.64575131 3. 1.73205081]</b><br>
+							<b>[3. 3. 2.44948974]]</b><br>
+							<b>''</b><br>
+							</p>
+							<!-- span class="image main"><img src="../images/pic13.jpg" alt="" /></span>
+						</div>
+					</div>
+
+				<!-- Footer -->
+					<!-- <footer id="footer">
+						<div class="inner">
+							<section>
+								<h2>Get in touch</h2>
+								<form method="post" action="#">
+									<div class="fields">
+										<div class="field half">
+											<input type="text" name="name" id="name" placeholder="Name" />
+										</div>
+										<div class="field half">
+											<input type="email" name="e mail" id="email" placeholder="Email" />
+										</div>
+										<div class="field">
+											<textarea name="message" id="message" placeholder="Message"></textarea>
+										</div>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Send" class="primary" /></li>
+									</ul>
+								</form>
+							</section>
+							<section>
+								<h2>Follow</h2>
+								<ul class="icons">
+									<li><a href="#" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-dribbble"><span class="label">Dribbble</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-500px"><span class="label">500px</span></a></li>
+									<li><a href="#" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
+									<li><a href="#" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+								</ul>
+							</section>
+							<ul class="copyright">
+								<li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</footer> -->
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+
+	</body>
+</html>

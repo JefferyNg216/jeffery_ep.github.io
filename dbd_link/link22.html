@@ -1,0 +1,189 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Jeffery's e-Portfolio - Machine Learning</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="../index.html" class="logo">
+									<span class="symbol"><img src="../images/logo.svg" alt="" /></span><span class="title">Jeffery's e-Portfolio</span>
+								</a>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>MSc of Data Science</h2>
+						<ul>
+							<li><a href="../index.html">About Me</a></li>
+							<li><a href="../tdp.html">The Data Professional</a></li>
+							<li><a href="../na.html">Numerical Analysis</a></li>
+							<li><a href="../dbd.html">Deciphering Big Data</a></li>
+							<li><a href="../vd.html">Visualising Data</a></li>
+							<li><a href="../ml.html">Machine Learning</a></li>
+							<li><a href="../rmpp.html">Research Methods and Professional Practice</a></li>
+							<!-- <li><a href="elements.html">Elements</a></li> -->
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<h2 style="margin-bottom: 10px;"><b>Calculation of Descriptive Statistics from a DataFrame</b></h2>
+							<p>
+							import numpy as np<br>
+							import pandas as pd<br>
+							<br>
+							people = ['Ann','Brandon','Chen','David','Emily','Farook', 'Gagan','Hamish','Imran','Joseph','Katherine','Lily']<br>
+							age = [21,12,32,45,37,18,28,52,5,40,48,15]<br>
+							weight = [55,35,77,68,70,60,72,69,18,65,82,48]<br>
+							height = [160,135,170,165,173,168,175,159,105,171,155,158]<br>
+							<br>
+							#1. Construct a dictionary with the available series data by using the following command:<br>
+							people_dict={'People':people,'Age':age,'Weight':weight,'Height':height}<br>
+							people_df=pd.DataFrame(data=people_dict)<br>
+							print(people_df)<br>
+							<b>'''Result =</b><br>
+							<b> People Age Weight Height</b><br>
+							<b>0 Ann 21 55 160</b><br>
+							<b>1 Brandon 12 35 135</b><br>
+							<b>2 Chen 32 77 170</b><br>
+							<b>3 David 45 68 165</b><br>
+							<b>4 Emily 37 70 173</b><br>
+							<b>5 Farook 18 60 168</b><br>
+							<b>6 Gagan 28 72 175</b><br>
+							<b>7 Hamish 52 69 159</b><br>
+							<b>8 Imran 5 18 105</b><br>
+							<b>9 Joseph 40 65 171</b><br>
+							<b>10 Katherine 48 82 155</b><br>
+							<b>11 Lily 15 48 158</b><br>
+							<b>'''</b><br>
+							<br>
+							#2. Find the number of rows and columns of the DataFrame by executing the following command:<br>
+							print(people_df.shape)<br>
+							<b>'''Result = (12, 4)'''</b><br>
+							<br>
+							#3. Obtain a simple count (any column can be used for this purpose) by executing the following command:<br>
+							print(people_df['Age'].count())<br>
+							<b>'''Result = 12'''</b><br>
+							<br>
+							#4. Calculate the sum total of age by using the following command:<br>
+							print(people_df['Age'].sum())<br>
+							<b>''Result = 353'''</b><br>
+							<br>
+							#5. Calculate the mean age by using the following command:<br>
+							print(people_df['Age'].mean())<br>
+							<b>'''Result = 29.416666666666668'''</b><br>
+							<br>
+							#6. Calculate the median weight by using the following command:<br>
+							print(people_df['Weight'].median())<br>
+							<b>'''Result = 66.5'''</b><br>
+							<br>
+							#7. Calculate the maximum height by using the following command:<br>
+							print(people_df['Height'].max())<br>
+							<b>'''Result = 175'''</b><br>
+							<br>
+							#8. Calculate the standard deviation of the weights by using the following command:<br>
+							print(people_df['Weight'].std())<br>
+							<b>'''Result = 18.45120510148239'''</b><br>
+							<br>
+							#9. To calculate percentile, we can call a function from NumPy and pass on the particular column (a pandas series). For example, to calculate the 75th and 25th percentiles of age distribution and their difference (called the inter-quartile range), use the following code:<br>
+							pcnt_75 = np.percentile(people_df['Age'],75)<br>
+							pcnt_25 = np.percentile(people_df['Age'],25)<br>
+							print("Inter-quartile range: ",pcnt_75-pcnt_25)<br>
+							<b>'''Result = Inter-quartile range: 24.0'''</b><br>
+							<br>
+							#10. Use the describe command to find a detailed description of the DataFrame:<br>
+							print(people_df.describe())<br>
+							<b>'''Result =</b><br>
+							<b> Age Weight Height</b><br>
+							<b>count 12.000000 12.000000 12.000000</b><br>
+							<b>mean 29.416667 59.916667 157.833333</b><br>
+							<b>std 15.329463 18.451205 19.834925</b><br>
+							<b>min 5.000000 18.000000 105.000000</b><br>
+							<b>25% 17.250000 53.250000 157.250000</b><br>
+							<b>50% 30.000000 66.500000 162.500000</b><br>
+							<b>75% 41.250000 70.500000 170.250000</b><br>
+							<b>max 52.000000 82.000000 175.000000</b><br>
+							<b>'''</b><br>
+							</p>
+							<!-- span class="image main"><img src="../dbd_image/pic1.jpg" alt="" style="width: 600px; height: auto;" /></span>
+						</div>
+					</div>
+
+				<!-- Footer -->
+					<!-- <footer id="footer">
+						<div class="inner">
+							<section>
+								<h2>Get in touch</h2>
+								<form method="post" action="#">
+									<div class="fields">
+										<div class="field half">
+											<input type="text" name="name" id="name" placeholder="Name" />
+										</div>
+										<div class="field half">
+											<input type="email" name="e mail" id="email" placeholder="Email" />
+										</div>
+										<div class="field">
+											<textarea name="message" id="message" placeholder="Message"></textarea>
+										</div>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Send" class="primary" /></li>
+									</ul>
+								</form>
+							</section>
+							<section>
+								<h2>Follow</h2>
+								<ul class="icons">
+									<li><a href="#" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-dribbble"><span class="label">Dribbble</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-500px"><span class="label">500px</span></a></li>
+									<li><a href="#" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
+									<li><a href="#" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+								</ul>
+							</section>
+							<ul class="copyright">
+								<li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</footer> -->
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+
+	</body>
+</html>

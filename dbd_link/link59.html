@@ -1,0 +1,169 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Jeffery's e-Portfolio - Machine Learning</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="../index.html" class="logo">
+									<span class="symbol"><img src="../images/logo.svg" alt="" /></span><span class="title">Jeffery's e-Portfolio</span>
+								</a>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>MSc of Data Science</h2>
+						<ul>
+							<li><a href="../index.html">About Me</a></li>
+							<li><a href="../tdp.html">The Data Professional</a></li>
+							<li><a href="../na.html">Numerical Analysis</a></li>
+							<li><a href="../dbd.html">Deciphering Big Data</a></li>
+							<li><a href="../vd.html">Visualising Data</a></li>
+							<li><a href="../ml.html">Machine Learning</a></li>
+							<li><a href="../rmpp.html">Research Methods and Professional Practice</a></li>
+							<!-- <li><a href="elements.html">Elements</a></li> -->
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<h2 style="margin-bottom: 10px;"><b>DataFrames and BeautifulSoup</b></h2>
+							<p>
+							import pandas as pd<br>
+							from bs4 import BeautifulSoup<br>
+							<br>
+							# pd.set_option('display.max_columns', None)<br>
+							# pd.set_option('display.width', None)<br>
+							# pd.set_option('display.max_colwidth', None)<br>
+							<br>
+							#1. Import pandas and read the document, as follows:<br>
+							fd = open("test.html", "r")<br>
+							soup = BeautifulSoup(fd)<br>
+							data = soup.findAll('tr')<br>
+							print("Data is a {} and {} items long".format(type(data), len(data)))<br>
+							<b>'''Result =</b><br>
+							<b>Data is a &lt;class 'bs4.element.ResultSet'&gt; and 4 items long</b><br>
+							<b>'''</b><br>
+							<br>
+							#2. Check the original table structure in the HTML source. You will see that the first row is the column headings and all of the following rows are the data. We assign two different variables for the two sections, as follows:<br>
+							data_without_header = data[1:]<br>
+							headers = data[0]<br>
+							print(headers)<br>
+							<b>'''Result =</b><br>
+							<b>&lt;tr&gt;</b><br>
+							<b>&lt;th&gt;Entry Header 1&lt;/th&gt;</b><br>
+							<b>&lt;th&gt;Entry Header 2&lt;/th&gt;</b><br>
+							<b>&lt;th&gt;Entry Header 3&lt;/th&gt;</b><br>
+							<b>&lt;th&gt;Entry Header 4&lt;/th&gt;</b><br>
+							<b>&lt;/tr&gt;</b><br>
+							<b>'''</b><br>
+							<br>
+							#3. Once we have separated the two sections, we need two list comprehensions to make them ready to go in a DataFrame. For the header, this is easy:<br>
+							col_headers = [th.getText() for th in headers.findAll('th')]<br>
+							print(col_headers)<br>
+							<b>#Result = ['Entry Header 1', 'Entry Header 2', 'Entry Header 3', 'Entry Header 4']</b><br>
+							<br>
+							#4. Data preparation is a bit tricky for a pandas DataFrame. You need to have a two-dimensional list, which is a list of lists. We accomplish that in the following way:<br>
+							df_data = [[td.getText() for td in tr.findAll('td')] for tr in data_without_header]<br>
+							print(df_data)<br>
+							<b>#Result = [['Entry First Line 1', 'Entry First Line 2', 'Entry First Line 3', 'Entry First Line 4'], ['Entry Line 1', 'Entry Line 2', 'Entry Line 3', 'Entry Line 4'], ['Entry Last Line 1', 'Entry Last Line 2', 'Entry Last Line 3', 'Entry Last Line 4']]</b><br>
+							<br>
+							#5. Invoke the pd.DataFrame method and supply the right arguments by using the following code:<br>
+							df = pd.DataFrame(df_data, columns=col_headers)<br>
+							print(df.head())<br>
+							<b>'''Result =</b><br>
+							<b> Entry Header 1 ... Entry Header 4</b><br>
+							<b>0 Entry First Line 1 ... Entry First Line 4</b><br>
+							<b>1 Entry Line 1 ... Entry Line 4</b><br>
+							<b>2 Entry Last Line 1 ... Entry Last Line 4</b><br>
+							<b>'''</b><br>
+							<br>
+							#6. Exporting a DataFrame as an Excel File<br>
+							writer = pd.ExcelWriter('test_output.xlsx')<br>
+							df.to_excel(writer, "Sheet1")<br>
+							writer._save()<br>
+							print(writer)<br>
+							<b>#Result = &lt;pandas.io.excel._openpyxl.OpenpyxlWriter object at 0x116d70710</b><br>
+							</p>
+							<!-- span class="image main" style="margin-bottom: 10px;"><img src="../dbd_image/pic1.jpg" alt="" style="width: 600px; height: auto;" /></span>
+						</div>
+					</div>
+
+				<!-- Footer -->
+					<!-- <footer id="footer">
+						<div class="inner">
+							<section>
+								<h2>Get in touch</h2>
+								<form method="post" action="#">
+									<div class="fields">
+										<div class="field half">
+											<input type="text" name="name" id="name" placeholder="Name" />
+										</div>
+										<div class="field half">
+											<input type="email" name="e mail" id="email" placeholder="Email" />
+										</div>
+										<div class="field">
+											<textarea name="message" id="message" placeholder="Message"></textarea>
+										</div>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Send" class="primary" /></li>
+									</ul>
+								</form>
+							</section>
+							<section>
+								<h2>Follow</h2>
+								<ul class="icons">
+									<li><a href="#" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-dribbble"><span class="label">Dribbble</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-500px"><span class="label">500px</span></a></li>
+									<li><a href="#" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
+									<li><a href="#" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+								</ul>
+							</section>
+							<ul class="copyright">
+								<li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</footer> -->
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+
+	</body>
+</html>
